@@ -5,8 +5,18 @@
 #include <math.h>
 #include <string>
 #include <future>
+#include <vector>
+#include <array>
 
 int temp2;
+std::vector<std::array<double long, 5>> inputs;
+void printvector(std::vector<std::array<double long, 5>> input) {
+    std::cout << "Vector" << std::endl;
+    std::cout << "Longitude 1 (Lo1)|Longitude 2 (Lo2)|Latitude 1 (La1)|Latitude 2 (La2)|Planetary Radius (r)" << std::endl;
+    for (int i = 0; i <= input.size(); i++) {
+        std::cout << input[i];
+    }
+}
 
 int grabinput() {
     std::cin.clear();
@@ -16,13 +26,15 @@ int grabinput() {
 }
 
 
+
+
 void printmenu() {
-    std::cout << "....." << std::endl << "(1) View input(s)\n(2) Add new input\n(3) Delete input\n(4) Clear inputs\n(5) Exit program" << endl << "....." << endl;
+    std::cout << "....." << std::endl << "(1) View input(s)\n(2) Add new input\n(3) Calculate\n(4) Clear inputs\n(5) Exit program" << endl << "....." << endl;
     int menuinput = grabinput();
     std::cout << endl;
     switch (menuinput) {
     case 1:
-        printarray();
+        printvector();
         printmenu();
         break;
     case 2:
