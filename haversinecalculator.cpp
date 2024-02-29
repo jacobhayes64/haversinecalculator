@@ -7,17 +7,21 @@
 #include <future>
 #include <vector>
 #include <array>
-
+std::array<double long,5> temparray;
 int temp2;
+double temp3;
 std::vector<std::array<double long, 5>> inputs;
 void printvector(std::vector<std::array<double long, 5>> input) {
     std::cout << "Vector" << std::endl;
     std::cout << "Longitude 1 (Lo1)|Longitude 2 (Lo2)|Latitude 1 (La1)|Latitude 2 (La2)|Planetary Radius (r)" << std::endl;
     for (int i = 0; i <= input.size(); i++) {
-        std::cout << input[i];
+        for (int j = 0; j <= input[i].size(); j++) {
+            std::cout << input[i][j];
+            std::cout << input[i][i];
+
+        }
     }
 }
-
 int grabinput() {
     std::cin.clear();
     std::cin >> temp2;
